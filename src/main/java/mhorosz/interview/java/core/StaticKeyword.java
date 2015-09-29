@@ -1,6 +1,6 @@
 package mhorosz.interview.java.core;
 
-public class TestClass {
+public class StaticKeyword {
 
     private static String STATIC_FILED = "STATIC_FIELD";
 
@@ -16,10 +16,10 @@ public class TestClass {
     public static class NestedTestClass{
 
         //access to static field as any top level class
-        private static String innerField = TestClass.STATIC_FILED;
+        private static String innerField = StaticKeyword.STATIC_FILED;
 
-        //access to instance field through TestClass instance
-        private String nestedInstanceField = new TestClass().instanceField;
+        //access to instance field through StaticKeyword instance
+        private String nestedInstanceField = new StaticKeyword().instanceField;
 
         //can declare static members
         public static void nestedDoSomethingStatic(){
@@ -27,7 +27,7 @@ public class TestClass {
         }
 
         //object of outer class is not required
-        private TestClass.NestedTestClass nestedObject = new TestClass.NestedTestClass();
+        private StaticKeyword.NestedTestClass nestedObject = new StaticKeyword.NestedTestClass();
 
         private Integer number;
 
@@ -35,7 +35,7 @@ public class TestClass {
 
         }
         public static NestedTestClass factoryMethod(){
-            return new TestClass.NestedTestClass();
+            return new StaticKeyword.NestedTestClass();
         }
 
     }
@@ -46,13 +46,13 @@ public class TestClass {
     public class InnerClass {
 
         //not allowed do declare static members!!!
-        //private static String STATIC_INNER_FILED = TestClass.STATIC_FILED;
+        //private static String STATIC_INNER_FILED = StaticKeyword.STATIC_FILED;
 
         //instance field are ok to access
-        private String innerInstanceField = new TestClass().instanceField;
+        private String innerInstanceField = new StaticKeyword().instanceField;
 
         //can access static methods
-        private String test = TestClass.doSomethingStatic();
+        private String test = StaticKeyword.doSomethingStatic();
 
     }
 }
